@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Navapol Tapang รับงาน Freelance ถ่ายงาน ตัดต่อ โมชั่นกราฟิก คุมระบบไลฟ์ และคลิป AI">
+<style>[hidden]{display:none!important}body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Navapol Tapang</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Chakra+Petch:wght@500;700&family=Anuphan:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: you stand centre stage in front of a wall of your own floating 9:16 clips under RGB light; services read as an editing timeline; works split into reels, live production, promo films and graphics; contact ends on an ON AIR band. Single committed dark look. */
+:root{
+  color-scheme: dark;
+  --ink-0:#07060f;
+  --ink-1:#100e20;
+  --ink-2:#18152e;
+  --line:#2b2750;
+  --fg:#eeedf8;
+  --muted:#9d99bd;
+  --violet:#9466ff;
+  --sky:#46c6f5;
+  --red:#ff3b5c;
+  --display:"Big Shoulders Display","Chakra Petch",system-ui,sans-serif;
+  --thai-display:"Chakra Petch","Big Shoulders Display",system-ui,sans-serif;
+  --body:"Anuphan","Noto Sans Thai",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  --photo:url("img/me.webp");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink-0);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink-0)}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:4px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--ink-0) 78%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--display);font-weight:900;font-size:clamp(19px,4.6vw,24px);white-space:nowrap;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand i{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 32px -6px color-mix(in srgb,var(--red) 70%,transparent)}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--violet);background:color-mix(in srgb,var(--violet) 12%,transparent)}
+.nav .btn{padding:8px 16px;font-size:14px}
+@media (max-width:760px){.nav ul{display:none}}
+
+/* ---------- hero stage ---------- */
+.hero{position:relative;overflow:hidden;padding-bottom:72px}
+.stage{position:relative;height:clamp(560px,62vw,800px);isolation:isolate;overflow:hidden}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.stage::before{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;z-index:8;pointer-events:none;background:linear-gradient(transparent,var(--ink-0) 88%)}
+.stage::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.bigword{position:absolute;left:50%;top:7%;transform:translateX(-50%);z-index:2;margin:0;font-family:var(--display);font-weight:900;font-size:clamp(110px,21vw,340px);line-height:.85;letter-spacing:.02em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3);text-shadow:-5px 0 0 rgba(255,59,92,.22),5px 0 0 rgba(70,198,245,.22);pointer-events:none;user-select:none}
+.halo{position:absolute;left:50%;top:50%;width:min(62vw,640px);aspect-ratio:1;transform:translate(-50%,-46%);z-index:3;border-radius:50%;pointer-events:none;filter:blur(70px);opacity:.7;background:conic-gradient(from 0deg,#ff3b5c,#9466ff,#46c6f5,#33f0c0,#46c6f5,#9466ff,#ff3b5c);animation:spin 14s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-46%) rotate(360deg)}}
+
+/* floating 9:16 clips (your real work) */
+.reel{position:absolute;left:var(--x);top:var(--y);width:var(--w);aspect-ratio:9/16;z-index:var(--z);opacity:var(--o,1);filter:blur(var(--b,0px));transform:rotate(var(--r,0deg));will-change:transform;display:block;text-decoration:none}
+.reel .in{position:absolute;inset:0;border-radius:12px;overflow:hidden;background:var(--ink-2) var(--img) center/cover no-repeat;border:1px solid rgba(255,255,255,.22);box-shadow:-3px 0 0 rgba(255,40,90,.6),3px 0 0 rgba(40,200,255,.6),0 24px 50px -12px rgba(0,0,0,.85);animation:bob var(--dur,7s) ease-in-out var(--dl,0s) infinite alternate;transition:box-shadow .3s}
+.reel:hover .in{box-shadow:-5px 0 0 rgba(255,40,90,.85),5px 0 0 rgba(40,200,255,.85),0 30px 60px -10px rgba(0,0,0,.9)}
+.reel .in::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,15,.45),transparent 25%,transparent 65%,rgba(7,6,15,.8))}
+.reel .tag,.reel .ratio{position:absolute;top:8px;z-index:1;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.reel .tag{left:9px}
+.reel .ratio{right:9px;opacity:.7}
+.reel .bar{position:absolute;left:9px;right:9px;bottom:9px;height:2px;background:rgba(255,255,255,.3);z-index:1;border-radius:2px;overflow:hidden}
+.reel .bar::before{content:"";position:absolute;inset:0 auto 0 0;width:40%;background:#fff;animation:prog var(--dur,7s) linear var(--dl,0s) infinite}
+@keyframes bob{from{transform:translateY(-10px)}to{transform:translateY(12px)}}
+@keyframes prog{from{width:0}to{width:100%}}
+
+/* you, centre stage */
+.me{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:5;height:94%;aspect-ratio:863/1100;max-width:98%;display:block;text-decoration:none;cursor:pointer;background:var(--photo) center bottom/contain no-repeat;filter:drop-shadow(-7px 0 20px rgba(255,59,92,.5)) drop-shadow(7px 0 20px rgba(70,198,245,.55));transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s}
+.me:hover,.me:focus-visible{transform:translateX(-50%) scale(1.025);filter:drop-shadow(-10px 0 28px rgba(255,59,92,.75)) drop-shadow(10px 0 28px rgba(70,198,245,.8))}
+.me-tag{position:absolute;right:-2%;top:30%;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(7,6,15,.72);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:13px;font-weight:600;color:#fff;white-space:nowrap;transition:background .3s,transform .3s}
+.me-tag b{width:7px;height:7px;border-radius:50%;background:var(--red);animation:ping 1.8s ease-out infinite}
+.me:hover .me-tag,.me:focus-visible .me-tag{background:var(--red);transform:translateX(4px)}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,59,92,.7)}100%{box-shadow:0 0 0 10px rgba(255,59,92,0)}}
+
+.freelance{position:absolute;left:max(24px,calc(var(--gutter-l) + 2%));bottom:12%;z-index:11;display:flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:42%;text-decoration:none}
+.fl-eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sky)}
+.fl-main{display:inline-flex;align-items:center;gap:14px;font-family:var(--thai-display);font-weight:700;font-size:clamp(28px,3.6vw,52px);line-height:1.1;color:#fff;text-shadow:-2px 0 0 rgba(255,59,92,.55),2px 0 0 rgba(70,198,245,.55)}
+.fl-main b{flex:none;width:12px;height:12px;border-radius:50%;background:#33f0c0;animation:pingg 1.8s ease-out infinite}
+.fl-sub{font-size:14px;color:var(--muted);transition:color .25s}
+.freelance:hover .fl-sub,.freelance:focus-visible .fl-sub{color:var(--fg)}
+@keyframes pingg{0%{box-shadow:0 0 0 0 rgba(51,240,192,.7)}100%{box-shadow:0 0 0 12px rgba(51,240,192,0)}}
+@media (max-width:640px){.freelance{left:50%;transform:translateX(-50%);top:46px;bottom:auto;max-width:none;align-items:center;padding:7px 14px;border-radius:999px;background:rgba(7,6,15,.7);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.fl-eye,.fl-sub{display:none}.fl-main{font-size:16px;gap:10px;text-shadow:none;white-space:nowrap}.fl-main b{width:8px;height:8px}}
+.vf{position:absolute;inset:18px max(18px,var(--gutter-r)) 18px max(18px,var(--gutter-l));z-index:10;pointer-events:none;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.85)}
+.vf .c{position:absolute;width:26px;height:26px;border:0 solid rgba(255,255,255,.65)}
+.vf .tl{top:0;left:0;border-top-width:2px;border-left-width:2px}
+.vf .tr{top:0;right:0;border-top-width:2px;border-right-width:2px}
+.vf .lbl{position:absolute;display:flex;align-items:center;gap:8px}
+.vf .rec{top:6px;left:38px}
+.vf .rec b{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s steps(2) infinite}
+.vf .tc{top:6px;right:38px;font-variant-numeric:tabular-nums}
+@keyframes blink{50%{opacity:.15}}
+
+.hero-copy{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px 56px;align-items:end;margin-top:-56px;position:relative;z-index:12}
+.hero h1{font-family:var(--thai-display);font-weight:700;font-size:clamp(40px,5.6vw,84px);line-height:1.05;background:linear-gradient(100deg,#fff 10%,var(--sky) 55%,var(--violet) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sky)}
+.hero-side{display:flex;flex-direction:column;gap:18px;padding-bottom:10px}
+.hero-side p{color:var(--muted);max-width:44ch}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.hero-copy{grid-template-columns:minmax(0,1fr);margin-top:-36px}}
+@media (max-width:640px){
+  .stage{height:clamp(500px,138vw,620px)}
+  .reel.m-hide{display:none}
+  .bigword{top:12%;font-size:clamp(80px,26vw,140px)}
+  .me{height:84%}
+  .me-tag{right:50%;top:auto;bottom:22%;transform:translateX(50%)}
+  .me:hover .me-tag{transform:translateX(50%)}
+}
+
+/* ---------- clients ---------- */
+.clients{border-block:1px solid var(--line);overflow:hidden;background:var(--ink-1)}
+.clients .label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.marquee{display:flex;width:max-content;animation:marq 40s linear infinite}
+.marquee ul{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:18px 20px;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;color:color-mix(in srgb,var(--fg) 70%,transparent)}
+.marquee li{display:flex;align-items:center;gap:40px}
+.marquee li::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+.clients-in{display:flex;align-items:center;gap:20px}
+.clients-in .label{padding-left:var(--gutter-l);flex:none}
+.clients-track{overflow:hidden;flex:1;min-width:0;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (max-width:640px){.clients-in{flex-direction:column;align-items:flex-start;gap:0;padding-top:14px}.marquee ul{font-size:20px;gap:28px}.marquee li{gap:28px}}
+
+/* ---------- section heads ---------- */
+section{scroll-margin-top:72px}
+.sec{padding-block:88px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-family:var(--display);font-weight:900;font-size:clamp(40px,6vw,76px);line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+.sec-head h2 small{display:block;font-family:var(--thai-display);font-weight:500;font-size:clamp(17px,2vw,22px);letter-spacing:0;text-transform:none;color:var(--muted);margin-top:10px}
+.sub-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:72px 0 24px;padding-top:24px;border-top:1px solid var(--line)}
+.sub-head h3{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,40px);letter-spacing:.02em;text-transform:uppercase;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.sub-head h3 small{font-family:var(--thai-display);font-weight:500;font-size:16px;text-transform:none;letter-spacing:0;color:var(--muted)}
+.more{font-size:14px;color:var(--sky);text-decoration:none;white-space:nowrap}
+.more:hover{text-decoration:underline}
+
+/* ---------- about / intro ---------- */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.portrait{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(90% 70% at 15% 15%,color-mix(in srgb,var(--red) 45%,transparent),transparent 60%),radial-gradient(90% 70% at 90% 30%,color-mix(in srgb,var(--sky) 50%,transparent),transparent 60%),radial-gradient(80% 60% at 50% 100%,color-mix(in srgb,var(--violet) 55%,transparent),transparent 70%),var(--ink-1)}
+.portrait .pimg{position:absolute;inset:6% 0 0 0;background:var(--photo) center bottom/contain no-repeat;filter:drop-shadow(-5px 0 14px rgba(255,59,92,.45)) drop-shadow(5px 0 14px rgba(70,198,245,.5))}
+.portrait .slate{position:absolute;left:16px;right:16px;bottom:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid rgba(255,255,255,.25);border-radius:4px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;background:rgba(7,6,15,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.slate div{padding:8px 10px;border-right:1px solid rgba(255,255,255,.18)}
+.slate div:last-child{border-right:0}
+.slate div{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slate b{display:block;margin-top:2px;font-family:var(--thai-display);font-size:15px;color:var(--fg);font-weight:700;letter-spacing:0;overflow:hidden;text-overflow:ellipsis}
+.about-body{display:flex;flex-direction:column;gap:22px}
+.about-body .hi{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--red);text-transform:uppercase}
+.about-body .lead{font-family:var(--thai-display);font-weight:500;font-size:clamp(22px,2.6vw,30px);line-height:1.45}
+.about-body p{color:var(--muted);max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stats div{padding:16px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.stats div:last-child{border-right:0}
+.stats b{font-family:var(--display);font-weight:900;font-size:40px;line-height:1;font-variant-numeric:tabular-nums;background:linear-gradient(90deg,var(--red),var(--violet),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{font-size:13px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.skills div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.skills div:nth-child(odd){padding-right:20px}
+.skills div:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
+.skills span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;align-self:center}
+#about:target .portrait{animation:flash 1.2s ease-out}
+@keyframes flash{30%{box-shadow:0 0 0 4px rgba(255,59,92,.6),0 0 60px rgba(70,198,245,.5)}100%{box-shadow:0 0 0 0 rgba(255,59,92,0)}}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}.portrait{max-width:420px}}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.skills{grid-template-columns:minmax(0,1fr)}.skills div:nth-child(even){padding-left:0;border-left:0}.skills div:nth-child(odd){padding-right:0}.stats b{font-size:30px}.stats div{padding:12px}}
+
+/* ---------- now card, tools ---------- */
+.now-card{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;border:1px solid color-mix(in srgb,var(--red) 55%,var(--line));border-radius:10px;background:linear-gradient(90deg,color-mix(in srgb,var(--red) 14%,transparent),transparent 75%)}
+.now-card .tally{flex:none;margin-top:3px}
+.now-card b{display:block;font-family:var(--thai-display);font-weight:700;font-size:18px;line-height:1.35;color:var(--fg)}
+.now-card span:not(.tally){font-size:14px;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools span{font-family:var(--mono);font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;color:var(--fg);background:var(--ink-1)}
+@media (max-width:480px){.now-card{flex-direction:column;gap:10px}}
+
+/* ---------- experience ---------- */
+.career{border:1px solid var(--line);border-radius:10px;background:var(--ink-1);overflow-x:auto}
+.career-in{position:relative;min-width:760px}
+.c-ruler{display:grid;grid-template-columns:150px minmax(0,1fr);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.c-ruler .corner{padding:10px 16px;border-right:1px solid var(--line);letter-spacing:.12em}
+.c-ticks{position:relative;height:36px}
+.c-ticks span{position:absolute;top:10px;transform:translateX(-50%);font-variant-numeric:tabular-nums}
+.c-lane{display:grid;grid-template-columns:150px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.c-lane:last-of-type{border-bottom:0}
+.c-head{padding:12px 16px;border-right:1px solid var(--line);display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);min-width:0}
+.c-head .tid{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--ink-0);background:var(--tc);padding:2px 6px;border-radius:3px;flex:none}
+.c-track{position:relative;height:60px;background:var(--ink-2);overflow:hidden}
+.c-track::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 1px,transparent 1px calc(100% / 11))}
+.c-clip{position:absolute;top:11px;bottom:11px;left:var(--l);width:var(--w);border-radius:6px;padding:0 10px;display:flex;align-items:center;background:color-mix(in srgb,var(--tc) 24%,var(--ink-2));border:1px solid color-mix(in srgb,var(--tc) 75%,transparent);font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-clip.is-now{box-shadow:0 0 18px color-mix(in srgb,var(--tc) 55%,transparent)}
+.c-mark{position:absolute;top:50%;left:var(--l);width:12px;height:12px;transform:translate(-50%,-50%) rotate(45deg);background:var(--tc)}
+.c-nowline{position:absolute;top:0;bottom:0;left:calc(150px + (100% - 150px) * .9836);width:2px;background:var(--red);box-shadow:0 0 10px var(--red);z-index:3;pointer-events:none}
+.c-nowline::before{content:"NOW";position:absolute;bottom:8px;right:6px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;color:#fff;background:var(--red);padding:2px 6px;border-radius:3px}
+.xp-list{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-direction:column}
+.xp-item{display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.xp-when{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.xp-item.current .xp-when{color:var(--fg)}
+.xp-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.xp-body h3{font-family:var(--thai-display);font-weight:700;font-size:clamp(19px,2vw,23px);line-height:1.35}
+.xp-body .org{font-size:15px;color:var(--sky)}
+.xp-body p{color:var(--muted);max-width:64ch;margin-top:4px}
+.xp-body .tools{margin-top:8px}
+.xp-item.edu .xp-body .org{color:#b892ff}
+@media (max-width:640px){.xp-item{grid-template-columns:minmax(0,1fr);gap:10px;padding:22px 0}.xp-when{flex-direction:row;align-items:center}}
+
+/* ---------- services timeline ---------- */
+.timeline{border:1px solid var(--line);border-radius:10px;background:var(--ink-1);overflow:hidden}
+.ruler{display:grid;grid-template-columns:280px minmax(0,1fr);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.ruler .corner{padding:10px 18px;border-right:1px solid var(--line);letter-spacing:.12em}
+.ruler .ticks{display:flex;justify-content:space-between;padding:10px 14px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 10%) bottom/100% 6px no-repeat;font-variant-numeric:tabular-nums}
+.track{display:grid;grid-template-columns:280px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.track:last-child{border-bottom:0}
+.thead{padding:20px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-width:0}
+.thead .tid{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--ink-0);background:var(--tc);padding:2px 7px;border-radius:3px;align-self:flex-start}
+.thead h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.02em;line-height:1.1}
+.thead p{font-size:14px;color:var(--muted);line-height:1.55}
+.lane{position:relative;background:var(--ink-2);min-height:120px;overflow:hidden}
+.lane::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 10%)}
+.clip{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s)*1%);width:calc(var(--w)*1%);height:62px;border-radius:6px;padding:10px 14px;display:flex;flex-direction:column;justify-content:space-between;background:color-mix(in srgb,var(--tc) 22%,var(--ink-2));border:1px solid color-mix(in srgb,var(--tc) 70%,transparent);font-size:14px;font-weight:600;overflow:hidden;white-space:nowrap}
+.clip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;opacity:.45;background:repeating-linear-gradient(90deg,var(--tc) 0 2px,transparent 2px 5px);-webkit-mask:linear-gradient(transparent,#000);mask:linear-gradient(transparent,#000)}
+.clip small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--muted);letter-spacing:.06em}
+.playhead{position:absolute;top:0;bottom:0;width:2px;background:var(--red);left:0;z-index:2;box-shadow:0 0 10px var(--red);animation:sweep 9s linear infinite}
+@keyframes sweep{from{left:0}to{left:100%}}
+.t-v1{--tc:var(--violet)}
+.t-v2{--tc:var(--sky)}
+.t-live{--tc:var(--red)}
+.t-ai{--tc:#b892ff}
+@media (max-width:760px){
+  .ruler{grid-template-columns:minmax(0,1fr)}.ruler .corner{display:none}
+  .track{grid-template-columns:minmax(0,1fr)}
+  .thead{border-right:0;border-bottom:1px solid var(--line)}
+  .lane{min-height:96px}
+  .clip{font-size:13px;height:56px;padding:8px 10px}
+}
+
+/* ---------- works: reels wall ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:var(--body);font-size:14px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--fg);border-color:var(--violet)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--ink-0);border-color:var(--fg)}
+.chip span{font-family:var(--mono);font-size:11px;opacity:.6;margin-left:4px}
+.reels-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.rc{position:relative;display:block;aspect-ratio:9/16;max-width:100%;border-radius:12px;overflow:hidden;background:var(--ink-2);border:1px solid var(--line);text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.rc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.rc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,15,.35),transparent 22%,transparent 50%,rgba(7,6,15,.92))}
+.rc:hover{transform:translateY(-6px);box-shadow:-4px 0 0 rgba(255,40,90,.7),4px 0 0 rgba(40,200,255,.7),0 26px 50px -18px rgba(0,0,0,.9)}
+.rc:hover img{transform:scale(1.05)}
+.rc-tag{position:absolute;top:10px;left:10px;z-index:1;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:rgba(7,6,15,.65);border:1px solid rgba(255,255,255,.22);color:#fff}
+.rc-play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) scale(.85);z-index:1;width:48px;height:48px;border-radius:50%;background:rgba(255,59,92,.9);display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s}
+.rc-play::before{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.rc:hover .rc-play,.rc:focus-visible .rc-play{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.rc-cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;display:flex;flex-direction:column;gap:3px}
+.rc-cap b{font-family:var(--thai-display);font-weight:700;font-size:15px;line-height:1.3;color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rc-cap small{font-size:12px;color:rgba(255,255,255,.7)}
+.rc[hidden]{display:none}
+@media (max-width:1060px){.reels-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.reels-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.reels-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rc-cap b{font-size:14px}}
+
+/* live production band */
+.live-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(160px,auto);gap:16px}
+.ph{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2);min-height:180px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ph:hover img{transform:scale(1.04)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,6,15,.88))}
+.ph figcaption{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;font-size:14px;font-weight:600;color:#fff;display:flex;flex-direction:column;gap:2px}
+.ph figcaption small{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--sky);text-transform:uppercase;font-weight:400}
+.ph.big{grid-column:span 2;grid-row:span 2;min-height:380px}
+.ph.wide{grid-column:span 2}
+.ph .onair-chip{position:absolute;top:12px;left:12px;z-index:1;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;color:#fff;background:var(--red);padding:4px 10px;border-radius:4px}
+.ph .onair-chip b{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+@media (max-width:860px){.live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ph.big{grid-column:span 2;grid-row:auto;min-height:300px}}
+@media (max-width:520px){.live-grid{grid-template-columns:minmax(0,1fr)}.ph.big,.ph.wide{grid-column:auto}.ph{min-height:220px}}
+
+/* promo films */
+.films{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.film{display:flex;flex-direction:column;gap:10px;text-decoration:none;min-width:0}
+.film .f-img{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2)}
+.film .f-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.film:hover .f-img img{transform:scale(1.05)}
+.film .f-img::before,.film .f-img::after{content:"";position:absolute;left:0;right:0;height:9%;background:#000;z-index:1}
+.film .f-img::before{top:0}
+.film .f-img::after{bottom:0}
+.film b{font-family:var(--thai-display);font-weight:700;font-size:16px;line-height:1.3}
+.film small{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.films{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* graphics */
+.gfx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:start}
+.covers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.covers a,.banners a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2);transition:transform .35s}
+.covers a:hover,.banners a:hover{transform:translateY(-4px)}
+.covers img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.banners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.banners img{width:100%;aspect-ratio:2/1;object-fit:cover}
+.gfx .cap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+@media (max-width:960px){.gfx{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.covers{grid-template-columns:repeat(2,minmax(0,1fr))}.banners{grid-template-columns:minmax(0,1fr)}}
+
+.works-title{display:flex;flex-direction:column;align-items:flex-start;gap:18px;min-width:0}
+.drive-link{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:6px;background:var(--red);color:#fff;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 0 24px color-mix(in srgb,var(--red) 70%,transparent);transition:box-shadow .2s,transform .2s}
+.drive-link b{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+.drive-link:hover,.drive-link:focus-visible{transform:translateX(3px);box-shadow:0 0 36px color-mix(in srgb,var(--red) 90%,transparent)}
+
+/* ---------- contact ---------- */
+.onair{position:relative;overflow:hidden;border-top:1px solid var(--line);background:radial-gradient(70% 120% at 85% 0%,color-mix(in srgb,var(--red) 22%,transparent),transparent 60%),radial-gradient(60% 100% at 0% 100%,color-mix(in srgb,var(--violet) 25%,transparent),transparent 60%),var(--ink-0)}
+.onair .wrap{padding-block:96px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px}
+.tally{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.2em;color:#fff;background:var(--red);padding:6px 12px;border-radius:4px;box-shadow:0 0 24px color-mix(in srgb,var(--red) 70%,transparent)}
+.tally b{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+.onair h2{font-family:var(--thai-display);font-weight:700;font-size:clamp(38px,6vw,78px);line-height:1.08;margin-top:22px}
+.onair h2 em{font-style:normal;color:var(--red)}
+.onair .copy p{color:var(--muted);margin-top:18px;max-width:46ch}
+.contacts{display:flex;flex-direction:column;gap:10px;margin-top:30px}
+.contact-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--ink-1) 70%,transparent)}
+.contact-row .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);width:56px}
+.contact-row .v{flex:1;min-width:0;user-select:all;overflow-wrap:anywhere}
+.copy-btn{font-family:var(--body);font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.copy-btn:hover{border-color:var(--sky)}
+form{display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--ink-1) 85%,transparent);min-width:0}
+label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+input,select,textarea{font:inherit;font-size:15px;color:var(--fg);background:var(--ink-0);border:1px solid var(--line);border-radius:8px;padding:11px 13px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px color-mix(in srgb,var(--violet) 25%,transparent)}
+textarea{resize:vertical;min-height:110px}
+.form-msg{font-size:14px;color:var(--sky)}
+.form-msg:empty{display:none}
+.fallback{display:flex;flex-direction:column;gap:10px;padding:14px;border:1px dashed var(--line);border-radius:10px;background:var(--ink-0)}
+.fallback pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--body);font-size:14px;line-height:1.6;color:var(--fg);user-select:all}
+.fb-note{font-size:13px;color:var(--muted)}
+a.copy-btn{display:inline-flex;align-items:center;text-decoration:none}
+#sendBtn:disabled{opacity:.6;cursor:wait;transform:none}
+@media (max-width:860px){.onair .wrap{grid-template-columns:minmax(0,1fr)}}
+
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+footer .mono{font-family:var(--mono);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .playhead{left:38%}
+  .reel .bar::before{width:40%}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="เมนูหลัก">
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>NAVAPOL TAPANG</a>
+    <ul>
+      <li><a href="#about">เกี่ยวกับ</a></li>
+      <li><a href="#experience">ประวัติ</a></li>
+      <li><a href="#services">บริการ</a></li>
+      <li><a href="#works">ผลงาน</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+    </ul>
+    <a class="btn btn-red" href="#contact">จ้างงาน</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="stage" id="stage">
+    <canvas id="glow" aria-hidden="true"></canvas>
+    <p class="bigword" aria-hidden="true">NAVAPOL</p>
+    <div class="halo" aria-hidden="true"></div>
+
+    <a class="reel m-hide" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1B4aN2fJkjunSPuluKzw31y1wPkjZxjlz/view" aria-label="ดูคลิป หนังหมาแมว" data-d=".35" style="--x:2%;--y:12%;--w:clamp(84px,9.5vw,140px);--z:1;--o:.9;--b:0px;--r:-6deg;--dur:8s;--dl:-2s"><span class="in" style="--img:url(img/ai_maeow.webp)"><span class="tag">AI</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1jKSXzhNavhkOVt8h4G3FYa2qFZMp-SVc/view" aria-label="ดูคลิป แตงโม 3D ออร่าท้าแดดนรก" data-d=".7" style="--x:11%;--y:27%;--w:clamp(96px,13vw,190px);--z:4;--r:4deg;--dur:6.5s;--dl:-1s"><span class="in" style="--img:url(img/ai_taengmo.webp)"><span class="tag">AI</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel m-hide" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1frEuIM24PR5hK1xKOg00Jru_h8-UtVif/view" aria-label="ดูคลิป รีวิวเสริมจมูก Amed Clinic" data-d=".3" style="--x:4%;--y:64%;--w:clamp(70px,8vw,120px);--z:1;--o:.55;--b:2px;--r:-3deg;--dur:9s;--dl:-4s"><span class="in" style="--img:url(img/cl_amed.webp)"><span class="tag">REELS</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1ZcvoHs7VL5Oph5S4-2LAZPuE3HN_ghpJ/view" aria-label="ดูคลิป 10 สินค้าจากจีน สร้างอาชีพได้" data-d=".45" style="--x:23%;--y:6%;--w:clamp(76px,9vw,130px);--z:1;--o:.75;--b:1px;--r:5deg;--dur:7.5s;--dl:-3s"><span class="in" style="--img:url(img/mo_china.webp)"><span class="tag">MOTION</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/18hmqTmirJD4Zv6H-JTqJER-s1-WSjmJr/view" aria-label="ดูคลิป สิวบุกหน้าหรือป่าช้าแตก" data-d=".55" style="--x:25%;--y:40%;--w:clamp(90px,11vw,160px);--z:4;--r:-5deg;--dur:7s;--dl:-5s"><span class="in" style="--img:url(img/ai_siw.webp)"><span class="tag">AI</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+
+    <a class="reel m-hide" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1aQFUxBalx4ddMkAghxz4NflzASuHs4S4/view" aria-label="ดูคลิป ภารกิจส่งมอบหัวใจดวงที่ 133" data-d=".35" style="--x:88%;--y:10%;--w:clamp(80px,9vw,140px);--z:1;--o:.6;--b:1.5px;--r:6deg;--dur:8.5s;--dl:-1.5s"><span class="in" style="--img:url(img/ge_traffic.webp)"><span class="tag">CONTENT</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/18zVUU4zHf8elKZo_TZV1MZ7mDz67aj_1/view" aria-label="ดูคลิป ภารกิจปราบแดดนรกและหน้าโทรม" data-d=".75" style="--x:76%;--y:32%;--w:clamp(100px,13.5vw,196px);--z:4;--r:-4deg;--dur:6s;--dl:-2.5s"><span class="in" style="--img:url(img/ai_sun.webp)"><span class="tag">AI</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel m-hide" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1TCOoUr3gXe--ZcG-85XTuwd5vT0C5_z7/view" aria-label="ดูคลิป น้ำพริกแม่บานเย็น" data-d=".3" style="--x:90%;--y:60%;--w:clamp(70px,8vw,124px);--z:1;--o:.55;--b:2px;--r:3deg;--dur:9.5s;--dl:-6s"><span class="in" style="--img:url(img/nam_prik.webp)"><span class="tag">AD</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/19NLrmHVjmd1oOWjLwlWqCLTtyRs2xEDv/view" aria-label="ดูปก TikTok" data-d=".45" style="--x:67%;--y:5%;--w:clamp(76px,9vw,128px);--z:1;--o:.75;--b:1px;--r:-6deg;--dur:7.8s;--dl:-3.5s"><span class="in" style="--img:url(img/tt_3.webp)"><span class="tag">COVER</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+    <a class="reel" target="_blank" rel="noopener" href="https://drive.google.com/file/d/12Ip-O2JH8g-9y_z5tMsnEEhIDWcQEL4-/view" aria-label="ดูคลิป ภารกิจกวาดพุงย้วยด้วยสายลับ" data-d=".55" style="--x:64%;--y:44%;--w:clamp(88px,10.5vw,156px);--z:4;--r:5deg;--dur:6.8s;--dl:-0.5s"><span class="in" style="--img:url(img/ai_pung.webp)"><span class="tag">AI</span><span class="ratio">9:16</span><span class="bar"></span></span></a>
+
+    <a class="freelance" href="#contact">
+      <span class="fl-eye">Available for freelance</span>
+      <span class="fl-main"><b></b>รับงาน Freelance</span>
+      <span class="fl-sub">ถ่าย · ตัด · โมชั่น · ไลฟ์ · คลิป AI →</span>
+    </a>
+
+    <a class="me" href="#about" aria-label="รู้จักผม: ไปหน้าแนะนำตัว"><span class="me-tag"><b></b>รู้จักผม →</span></a>
+
+    <div class="vf" aria-hidden="true">
+      <i class="c tl"></i><i class="c tr"></i>
+      <div class="lbl rec"><b></b>REC</div>
+      <div class="lbl tc" id="tc">00:00:00:00</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>ภาพที่หยุดคนดูได้</h1>
+      <div class="hero-side">
+        <span class="eyebrow">Creative Video &amp; Live Production</span>
+        <p>ถ่ายงาน ตัดต่อ โมชั่นกราฟิก คุมระบบไลฟ์ และสร้างคลิป AI ครบจบในคนเดียว ตั้งแต่ไอเดียแรกจนถึงวินาทีที่ออกอากาศ</p>
+        <div class="row">
+          <a class="btn btn-red" href="#contact">เริ่มโปรเจกต์</a>
+          <a class="btn btn-ghost" href="#works">ดูผลงาน</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="clients" aria-label="แบรนด์ที่เคยร่วมงาน">
+  <div class="clients-in">
+    <span class="label">แบรนด์ที่เคยร่วมงาน</span>
+    <div class="clients-track">
+      <div class="marquee">
+        <ul><li>The Crown SS5</li><li>Amed Clinic</li><li>Dr.Ply Clinic</li><li>QS Clinic</li><li>Wink Clinic</li><li>NooMa Skin</li><li>DeBrand</li><li>MUVE</li><li>MIDA Probiotics</li><li>Hansar</li><li>Bestural</li><li>Sis Saves</li><li>TPI</li><li>Wang Mala Hotpot</li></ul>
+        <ul aria-hidden="true"><li>The Crown SS5</li><li>Amed Clinic</li><li>Dr.Ply Clinic</li><li>QS Clinic</li><li>Wink Clinic</li><li>NooMa Skin</li><li>DeBrand</li><li>MUVE</li><li>MIDA Probiotics</li><li>Hansar</li><li>Bestural</li><li>Sis Saves</li><li>TPI</li><li>Wang Mala Hotpot</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="about-h">About<small>คนทำงานที่คิด ถ่าย ตัด และออกอากาศได้เอง</small></h2>
+    </div>
+    <div class="about">
+      <div class="portrait">
+        <div class="pimg" role="img" aria-label="รูปโปรไฟล์"></div>
+        <div class="slate">
+          <div>HARD-WORKING<b>ขยัน</b></div>
+          <div>ON TIME<b>ส่งงานตรงเวลา</b></div>
+          <div>RESPONSIBLE<b>รับผิดชอบ</b></div>
+        </div>
+      </div>
+      <div class="about-body">
+        <span class="hi">สวัสดีครับ ผม นวพล ตะพัง · Navapol Tapang</span>
+        <p class="lead">ผมเชื่อว่างานวิดีโอที่ดีเริ่มจากไอเดียที่ชัด และจบที่ภาพที่คนดูจำได้</p>
+        <p>ผมเริ่มจากห้องตัดต่อรายการข่าว ต่อด้วยงานวางระบบไลฟ์สตรีมให้บริษัทมหาชน และตอนนี้เป็นครูสอนกราฟิกที่ดูแลสื่อทั้งหมดของวิทยาลัย ทำงานได้ครบตั้งแต่คิดคอนเซปต์ ถ่าย ตัด ใส่โมชั่น คุมไลฟ์ ไปจนถึงสร้างคลิป AI ให้คลินิกความงาม แบรนด์สกินแคร์ ธุรกิจสุขภาพ และองค์กร</p>
+        <div class="stats">
+          <div><b>11+</b><span>ปีประสบการณ์</span></div>
+          <div><b>1000+</b><span>คลิปวิดีโอ</span></div>
+          <div><b>100+</b><span>กราฟิกและภาพถ่าย</span></div>
+          <div><b>17</b><span>หมวดธุรกิจ</span></div>
+        </div>
+        <div class="now-card">
+          <span class="tally"><b></b>NOW</span>
+          <div><b>ครูสอนกราฟิก &amp; ผู้ดูแลสื่อวิทยาลัย</b><span>วิทยาลัยเทคโนโลยีวิบูลย์บริหารธุรกิจ รามอินทรา · ตั้งแต่ เม.ย. 2567</span></div>
+        </div>
+        <div class="tools" aria-label="เครื่องมือที่ใช้"><span>Photoshop</span><span>Premiere Pro</span><span>After Effects</span><span>OBS</span><span>DSLR Sony / Canon</span></div>
+        <div class="skills">
+          <div>ถ่ายงาน<span>V1</span></div>
+          <div>ตัดต่อ<span>V1</span></div>
+          <div>โมชั่นกราฟิก<span>V2</span></div>
+          <div>งานกราฟิก<span>V2</span></div>
+          <div>คุมระบบไลฟ์<span>LIVE</span></div>
+          <div>คลิป AI<span>AI</span></div>
+          <div>คิดคอนเซปต์<span>AI</span></div>
+          <div>ครีเอทีฟ<span>ALL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience" aria-labelledby="xp-h" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="xp-h">Experience<small>11 ปี จากห้องตัดต่อข่าว ห้องควบคุมไลฟ์ ถึงห้องเรียน</small></h2>
+      <span class="eyebrow">Sequence 00 · Career</span>
+    </div>
+
+    <div class="career" role="img" aria-label="ไทม์ไลน์การทำงาน พ.ศ. 2559 ถึงปัจจุบัน">
+      <div class="career-in">
+        <div class="c-ruler">
+          <div class="corner">พ.ศ.</div>
+          <div class="c-ticks"><span style="left:4.55%">2559</span><span style="left:13.64%">2560</span><span style="left:22.73%">2561</span><span style="left:31.82%">2562</span><span style="left:40.91%">2563</span><span style="left:50%">2564</span><span style="left:59.09%">2565</span><span style="left:68.18%">2566</span><span style="left:77.27%">2567</span><span style="left:86.36%">2568</span><span style="left:95.45%">2569</span></div>
+        </div>
+        <div class="c-lane t-ai"><div class="c-head"><span class="tid">EDU</span>จบ ป.ตรี 2559</div><div class="c-track"><span class="c-mark" style="--l:1.8%" title="จบปริญญาตรี 2559"></span><span class="c-clip" style="--l:5.3%;--w:12.9%">ฝึกงานรายการทีวี</span></div></div>
+        <div class="c-lane t-v1"><div class="c-head"><span class="tid">V1</span>ตัดต่อ</div><div class="c-track"><span class="c-clip" style="--l:9.09%;--w:36.36%">ตัดต่อรายการข่าว · สยามอินเตอร์มัลติมีเดีย</span></div></div>
+        <div class="c-lane t-v2"><div class="c-head"><span class="tid">V2</span>สื่อ &amp; สอน</div><div class="c-track"><span class="c-clip" style="--l:37.12%;--w:26.52%">สื่อองค์กร &amp; ครูกราฟิก · วิบูลย์ฯ</span><span class="c-clip is-now" style="--l:75%;--w:23.36%">ครูสอนกราฟิก · วิบูลย์ฯ</span></div></div>
+        <div class="c-lane t-live"><div class="c-head"><span class="tid">LIVE</span>ไลฟ์สตรีม</div><div class="c-track"><span class="c-clip" style="--l:54.55%;--w:18.18%">Live Streaming · มูฟฟาสท์</span></div></div>
+        <span class="c-nowline" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <ol class="xp-list">
+      <li class="xp-item current">
+        <div class="xp-when"><span class="tally"><b></b>NOW</span>เม.ย. 2567 – ปัจจุบัน</div>
+        <div class="xp-body">
+          <h3>ครูสอนกราฟิก &amp; ผู้ดูแลสื่อวิทยาลัย</h3>
+          <span class="org">วิทยาลัยเทคโนโลยีวิบูลย์บริหารธุรกิจ รามอินทรา</span>
+          <p>สอนนักเรียน ปวช. และ ปวส. สาขากราฟิก พร้อมดูแลสื่อทั้งหมดของวิทยาลัย ถ่ายวิดีโอและภาพนิ่ง ตัดต่อคอนเทนต์โปรโมทเพจ และวางระบบไลฟ์สดให้งานของวิทยาลัย</p>
+          <div class="tools"><span>Photoshop</span><span>Premiere Pro</span><span>After Effects</span><span>Live</span></div>
+        </div>
+      </li>
+      <li class="xp-item">
+        <div class="xp-when">ม.ค. 2565 – ธ.ค. 2566</div>
+        <div class="xp-body">
+          <h3>Live Streaming</h3>
+          <span class="org">บริษัท มูฟฟาสท์ จำกัด (มหาชน)</span>
+          <p>วางระบบและควบคุมไลฟ์สตรีม เซ็ตกล้อง DSLR ของ Sony และ Canon และคุมการออกอากาศผ่าน OBS</p>
+          <div class="tools"><span>OBS</span><span>DSLR Sony / Canon</span></div>
+        </div>
+      </li>
+      <li class="xp-item">
+        <div class="xp-when">ก.พ. 2563 – ธ.ค. 2565</div>
+        <div class="xp-body">
+          <h3>สื่อวีดิทัศน์และภาพลักษณ์องค์กร / ครูคอมพิวเตอร์กราฟิก</h3>
+          <span class="org">วิทยาลัยเทคโนโลยีวิบูลย์บริหารธุรกิจ รามอินทรา</span>
+          <p>ถ่ายวิดีโอและภาพนิ่ง ตัดต่อและทำสื่อโปรโมทเพจวิทยาลัย ทำระบบไลฟ์สด และสอนนักเรียน ปวช. และ ปวส. สาขากราฟิก</p>
+        </div>
+      </li>
+      <li class="xp-item">
+        <div class="xp-when">ม.ค. 2560 – ธ.ค. 2563</div>
+        <div class="xp-body">
+          <h3>ตัดต่อรายการข่าว</h3>
+          <span class="org">บริษัท สยามอินเตอร์มัลติมีเดีย จำกัด</span>
+          <p>ตัดต่อรายการข่าว ตกแต่งภาพ คิดไอเดีย และถ่ายภาพ ต่อยอดจากการฝึกงานสหกิจด้านรายการทีวีที่บริษัทเดียวกัน (ส.ค. 2559 – ธ.ค. 2560)</p>
+        </div>
+      </li>
+      <li class="xp-item edu">
+        <div class="xp-when">จบปี 2559</div>
+        <div class="xp-body">
+          <h3>ปริญญาตรี สาขาโฆษณาประชาสัมพันธ์</h3>
+          <span class="org">มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก วิทยาเขตจักรพงษภูวนารถ</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="services" aria-labelledby="svc-h" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="svc-h">Services<small>4 แทร็กที่ทำงานพร้อมกันในโปรเจกต์เดียว</small></h2>
+      <span class="eyebrow">Sequence 01 · Timeline</span>
+    </div>
+    <div class="timeline">
+      <div class="ruler" aria-hidden="true">
+        <div class="corner">TRACK</div>
+        <div class="ticks"><span>00:00</span><span>00:15</span><span>00:30</span><span>00:45</span><span>01:00</span></div>
+      </div>
+      <div class="track t-v1">
+        <div class="thead"><span class="tid">V1</span><h3>Video Production</h3><p>ถ่ายและตัดต่อคลิปรีวิว คอนเทนต์ TikTok และ Reels วิดีโอองค์กร และงานอีเวนต์</p></div>
+        <div class="lane">
+          <div class="clip" style="--s:3;--w:40">ถ่ายงาน<small>CAM A · CAM B</small></div>
+          <div class="clip" style="--s:46;--w:48">ตัดต่อ<small>EDIT · CUT · STORY</small></div>
+          <span class="playhead" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="track t-v2">
+        <div class="thead"><span class="tid">V2</span><h3>Motion &amp; Graphics</h3><p>โมชั่นกราฟิก ปก TikTok แบนเนอร์ และกราฟิกประกอบแบรนด์</p></div>
+        <div class="lane">
+          <div class="clip" style="--s:14;--w:36">โมชั่นกราฟิก<small>TITLES · FX</small></div>
+          <div class="clip" style="--s:55;--w:34">กราฟิก<small>COVER · BANNER</small></div>
+          <span class="playhead" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="track t-live">
+        <div class="thead"><span class="tid">LIVE</span><h3>Live Production</h3><p>วางระบบและคุมไลฟ์หน้างานด้วย OBS และกล้อง DSLR ตั้งแต่สัมมนาไปจนถึงรายการประกวด</p></div>
+        <div class="lane">
+          <div class="clip" style="--s:0;--w:28">วางระบบไลฟ์<small>SETUP</small></div>
+          <div class="clip" style="--s:31;--w:66">คุมไลฟ์หน้างาน<small>SWITCH · STREAM · ON AIR</small></div>
+          <span class="playhead" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="track t-ai">
+        <div class="thead"><span class="tid">AI</span><h3>AI &amp; Creative</h3><p>คิดคอนเซปต์ เขียนบท และสร้างคลิปตัวละคร AI ที่หยุดนิ้วคนเลื่อนฟีด</p></div>
+        <div class="lane">
+          <div class="clip" style="--s:6;--w:30">คิดคอนเซปต์<small>IDEA · SCRIPT</small></div>
+          <div class="clip" style="--s:40;--w:42">คลิป AI<small>CHARACTER · GENERATE</small></div>
+          <span class="playhead" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="works" aria-labelledby="works-h" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="works-title">
+        <a class="drive-link" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/10bB62WQrH0IQ4TAbb8FEsrzr0ZdN1Lzd"><b></b>ดูผลงานเพิ่มเติมได้ในไดรฟ์ →</a>
+        <h2 id="works-h">Selected Works<small>คัดจากผลงานจริง กดที่การ์ดเพื่อดูคลิปเต็ม</small></h2>
+      </div>
+      <div class="filters" role="group" aria-label="กรองคลิป">
+        <button class="chip" type="button" id="f-all" data-f="all" aria-pressed="true">ทั้งหมด</button>
+        <button class="chip" type="button" id="f-ai" data-f="ai" aria-pressed="false">AI</button>
+        <button class="chip" type="button" id="f-beauty" data-f="beauty" aria-pressed="false">ความงาม</button>
+        <button class="chip" type="button" id="f-health" data-f="health" aria-pressed="false">สุขภาพ</button>
+        <button class="chip" type="button" id="f-brand" data-f="brand" aria-pressed="false">แบรนด์ &amp; โมชั่น</button>
+      </div>
+    </div>
+
+    <div class="reels-grid" id="reels">
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1jKSXzhNavhkOVt8h4G3FYa2qFZMp-SVc/view"><img src="img/ai_taengmo.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>แตงโม 3D ออร่าท้าแดดนรก</b><small>คลิปตัวละคร AI</small></span></a>
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/18zVUU4zHf8elKZo_TZV1MZ7mDz67aj_1/view"><img src="img/ai_sun.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>ภารกิจปราบแดดนรกและหน้าโทรม</b><small>คลิปตัวละคร AI</small></span></a>
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/18hmqTmirJD4Zv6H-JTqJER-s1-WSjmJr/view"><img src="img/ai_siw.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>สิวบุกหน้าหรือป่าช้าแตก</b><small>คลิปตัวละคร AI</small></span></a>
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1B4aN2fJkjunSPuluKzw31y1wPkjZxjlz/view"><img src="img/ai_maeow.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>หนังหมาแมว</b><small>หนังสั้นแอนิเมชัน AI</small></span></a>
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/12Ip-O2JH8g-9y_z5tMsnEEhIDWcQEL4-/view"><img src="img/ai_pung.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>ภารกิจกวาดพุงย้วยด้วยสายลับ</b><small>คลิปตัวละคร AI</small></span></a>
+      <a class="rc" data-cat="ai" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1uF7udEf2wZ2ob1kpjev-vQvSU98yZr0-/view"><img src="img/ai_gluta.webp" alt="" loading="lazy"><span class="rc-tag">AI</span><span class="rc-play"></span><span class="rc-cap"><b>กลูต้าวิ้งค์ ตัวช่วยผิวพัง</b><small>คลิป AI · Wink White</small></span></a>
+
+      <a class="rc" data-cat="beauty" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1frEuIM24PR5hK1xKOg00Jru_h8-UtVif/view"><img src="img/cl_amed.webp" alt="" loading="lazy"><span class="rc-tag">Clinic</span><span class="rc-play"></span><span class="rc-cap"><b>รีวิวเสริมจมูก</b><small>Amed Clinic · TikTok</small></span></a>
+      <a class="rc" data-cat="beauty" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1qfBFNxjmhKJglSwQTlfraQYjTU_jVa-g/view"><img src="img/cl_lasik.webp" alt="" loading="lazy"><span class="rc-tag">Clinic</span><span class="rc-play"></span><span class="rc-cap"><b>Vlog ขั้นตอนการทำเลสิค</b><small>เลสิคหมอจตุพร</small></span></a>
+      <a class="rc" data-cat="beauty" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1vxEun2CLJq9Kb8TQCLoXwKd5z4zmji_z/view"><img src="img/cl_qs.webp" alt="" loading="lazy"><span class="rc-tag">Clinic</span><span class="rc-play"></span><span class="rc-cap"><b>รีวิว Hifu คุณเมย์</b><small>QS Clinic</small></span></a>
+      <a class="rc" data-cat="beauty" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1Pfvk1jLx60ptxrLC78lTJDceME4ADtei/view"><img src="img/cl_visual.webp" alt="" loading="lazy"><span class="rc-tag">Clinic</span><span class="rc-play"></span><span class="rc-cap"><b>The Visual TV ตอน 5</b><small>The Visual Clinic</small></span></a>
+      <a class="rc" data-cat="beauty" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1Ay9130UHVaGEg0jWkrw8KM1hccXwvI-h/view"><img src="img/sk_debrand.webp" alt="" loading="lazy"><span class="rc-tag">Skincare</span><span class="rc-play"></span><span class="rc-cap"><b>กันแดดที่ไม่ได้แค่กัน</b><small>DeBrand Cosmetic</small></span></a>
+
+      <a class="rc" data-cat="health" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1xpplm9iVgYxl3jLSzFWCpnJPHOPupwOv/view"><img src="img/he_mida.webp" alt="" loading="lazy"><span class="rc-tag">Health</span><span class="rc-play"></span><span class="rc-cap"><b>ท้องผูก 40 ปี ดีขึ้นจริง</b><small>MIDA Probiotics Drink</small></span></a>
+      <a class="rc" data-cat="health" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1l2FyHy_mqcF-xESi5Lr8WwjWhLba_h9S/view"><img src="img/he_kon.webp" alt="" loading="lazy"><span class="rc-tag">Health</span><span class="rc-play"></span><span class="rc-cap"><b>4 ท่าปั้นก้น ใส่ยีนส์สวย</b><small>คอนเทนต์ออกกำลังกาย</small></span></a>
+      <a class="rc" data-cat="health" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1xyU2NyRVNCN0RRg1vMMsL6_LWVir2Rsm/view"><img src="img/ma_hansar.webp" alt="" loading="lazy"><span class="rc-tag">Wellness</span><span class="rc-play"></span><span class="rc-cap"><b>รีวิวนวดเท้า</b><small>Hansar</small></span></a>
+
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1ZcvoHs7VL5Oph5S4-2LAZPuE3HN_ghpJ/view"><img src="img/mo_china.webp" alt="" loading="lazy"><span class="rc-tag">Motion</span><span class="rc-play"></span><span class="rc-cap"><b>10 สินค้าจากจีน สร้างอาชีพได้</b><small>TPI · โมชั่นกราฟิก</small></span></a>
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1MH-1P2cXolZJWJUYR1MSMdH8OO25Za7S/view"><img src="img/mo_nooma04.webp" alt="" loading="lazy"><span class="rc-tag">Motion</span><span class="rc-play"></span><span class="rc-cap"><b>ทากันแดดทุกวัน ทำไมหน้ายังหมอง</b><small>NooMa Skin · โมชั่นกราฟิก</small></span></a>
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1HfT3nQQfNTNBbUIGC6Cax2ubE0tpIyeJ/view"><img src="img/ad_chatgpt.webp" alt="" loading="lazy"><span class="rc-tag">Ads</span><span class="rc-play"></span><span class="rc-cap"><b>How to ดูดวงกับ ChatGPT</b><small>MUVE</small></span></a>
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1TCOoUr3gXe--ZcG-85XTuwd5vT0C5_z7/view"><img src="img/nam_prik.webp" alt="" loading="lazy"><span class="rc-tag">Food</span><span class="rc-play"></span><span class="rc-cap"><b>น้ำพริกแม่บานเย็น หอมทะลุจอ</b><small>คลิปขายสินค้า</small></span></a>
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1aQFUxBalx4ddMkAghxz4NflzASuHs4S4/view"><img src="img/ge_traffic.webp" alt="" loading="lazy"><span class="rc-tag">Story</span><span class="rc-play"></span><span class="rc-cap"><b>ภารกิจส่งมอบหัวใจดวงที่ 133</b><small>Traffic Police</small></span></a>
+      <a class="rc" data-cat="brand" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1gVrMnt7gjS0vq2u49XmT4u08S-qyeGFH/view"><img src="img/co_team.webp" alt="" loading="lazy"><span class="rc-tag">Corporate</span><span class="rc-play"></span><span class="rc-cap"><b>ทีมงานมืออาชีพ กระบวนการเป็นระบบ</b><small>วิดีโอนำเสนอองค์กร</small></span></a>
+    </div>
+
+    <div class="sub-head">
+      <h3>Live &amp; Production<small>เบื้องหลังหน้างานจริง</small></h3>
+      <a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1hSgaY3AFt-LFDrb9llJbATidWuWwuKJQ">ดูภาพทั้งหมด →</a>
+    </div>
+    <div class="live-grid">
+      <figure class="ph big"><img src="img/ph_crown1.webp" alt="คุมสวิตเชอร์ไลฟ์ในห้องควบคุม" loading="lazy"><span class="onair-chip"><b></b>LIVE</span><figcaption><small>Live Switching</small>คุมไลฟ์ The Crown SS5 รอบ Final</figcaption></figure>
+      <figure class="ph wide"><img src="img/ph_crown2.webp" alt="ห้องควบคุมไลฟ์ในแสงไฟม่วง" loading="lazy"><figcaption><small>Control Room</small>ห้องควบคุมไลฟ์ The Crown SS5</figcaption></figure>
+      <figure class="ph"><img src="img/ph_line1.webp" alt="ชุดอุปกรณ์ไลฟ์สตรีมหน้างาน" loading="lazy"><figcaption><small>Streaming Setup</small>ระบบไลฟ์สตรีมหน้างาน</figcaption></figure>
+      <figure class="ph"><img src="img/ph_s1.webp" alt="ถ่ายทำวิดีโอในห้องสมุด" loading="lazy"><figcaption><small>On Location</small>ถ่ายทำนอกสถานที่</figcaption></figure>
+    </div>
+
+    <div class="sub-head">
+      <h3>Promo Films<small>วิดีโอโปรโมทองค์กรและสถานที่</small></h3>
+      <a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1rMVRjN5B7Io_EPxuphgs1I5E8W40gL8h">ดูทั้งหมด →</a>
+    </div>
+    <div class="films">
+      <a class="film" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1E_sjRjnnyt1hMTCxbQSXCrtWxmcdL9ls/view"><span class="f-img"><img src="img/pr_tii.webp" alt="" loading="lazy"></span><b>TII Grand Opening</b><small>วิดีโอเปิดตัว</small></a>
+      <a class="film" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1jugcFJmfQq623DdBG6KWkfdYyL1RHmcu/view"><span class="f-img"><img src="img/pr_mala.webp" alt="" loading="lazy"></span><b>Wang Mala Hotpot</b><small>วิดีโอโปรโมทร้าน</small></a>
+      <a class="film" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1WJgquGEO4FUlQaU01zGGhP0IFId0a6QT/view"><span class="f-img"><img src="img/pr_wat.webp" alt="" loading="lazy"></span><b>วัดป่ารักษาใจ</b><small>วิดีโอโปรโมทสถานที่</small></a>
+      <a class="film" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1cnS3WR9kGQHkjQFyX7HwADMTq2rVOHao/view"><span class="f-img"><img src="img/fa_airionix.webp" alt="" loading="lazy"></span><b>Airionix</b><small>วิดีโอพรีเซนต์โรงงาน</small></a>
+    </div>
+
+    <div class="sub-head">
+      <h3>Graphics<small>ปก TikTok และแบนเนอร์</small></h3>
+      <a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/11Z86vue0sohW0VglP0jQcZF02r_Jd8la">ดูทั้งหมด →</a>
+    </div>
+    <div class="gfx">
+      <div>
+        <p class="cap">TikTok Covers</p>
+        <div class="covers">
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1WPCJhAOe5e8xfjL_s4z3KaTCAO1vKqZ-/view" aria-label="ปก TikTok 1"><img src="img/tt_1.webp" alt="ปก TikTok" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1aRG7dXIVEbLu0eUkx2Mf8yceOBqjqthR/view" aria-label="ปก TikTok 2"><img src="img/tt_2.webp" alt="ปก TikTok" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/19NLrmHVjmd1oOWjLwlWqCLTtyRs2xEDv/view" aria-label="ปก TikTok 3"><img src="img/tt_3.webp" alt="ปก TikTok" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1KDAtq093kwnQNkGILYh3RjZzYoP9NnfW/view" aria-label="ปก TikTok 4"><img src="img/tt_4.webp" alt="ปก TikTok" loading="lazy"></a>
+        </div>
+      </div>
+      <div>
+        <p class="cap">Social Banners</p>
+        <div class="banners">
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1A4d1KmH-YedVRTPCi0itzgVUZw_BLxxz/view" aria-label="แบนเนอร์ 1"><img src="img/gr_a1.webp" alt="แบนเนอร์โซเชียล" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1L5WMidaf-X87nZAj8gmGeORw9mKs8hRV/view" aria-label="แบนเนอร์ 2"><img src="img/gr_a5.webp" alt="แบนเนอร์โซเชียล" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1sfY0LT7kviNj4J4VQW5gRp7c_EZFQ_6c/view" aria-label="แบนเนอร์ 3"><img src="img/gr_a9.webp" alt="แบนเนอร์โซเชียล" loading="lazy"></a>
+          <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1WEV5BEOWayJwPV1KWD2RIehlqW_Ljq6A/view" aria-label="แบนเนอร์ 4"><img src="img/gr_j1.webp" alt="แบนเนอร์โซเชียล" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="onair" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="copy">
+      <span class="tally"><b></b>ON AIR</span>
+      <h2 id="contact-h">มีโปรเจกต์ในใจ?<br><em>เริ่มกันเลย</em></h2>
+      <p>เล่าโจทย์คร่าวๆ มาได้เลย ทั้งงานถ่าย ตัดต่อ โมชั่น ไลฟ์ หรือคลิป AI แล้วผมจะติดต่อกลับพร้อมไอเดียและราคา</p>
+      <div class="contacts">
+        <div class="contact-row"><span class="k">LINE</span><span class="v" id="c-line">navapol.nax</span><button class="copy-btn" type="button" data-copy="c-line">คัดลอก</button></div>
+        <div class="contact-row"><span class="k">EMAIL</span><span class="v" id="c-mail">navapolthofan2473@gmail.com</span><button class="copy-btn" type="button" data-copy="c-mail">คัดลอก</button></div>
+        <div class="contact-row"><span class="k">TEL</span><span class="v" id="c-tel">095-540-1924</span><button class="copy-btn" type="button" data-copy="c-tel">คัดลอก</button></div>
+      </div>
+    </div>
+    <form id="brief" novalidate>
+      <label for="f-name">ชื่อของคุณ<input id="f-name" name="name" type="text" placeholder="เช่น คุณมิน, บริษัท ABC"></label>
+      <label for="f-contact">เบอร์โทร / LINE / อีเมล สำหรับติดต่อกลับ<input id="f-contact" name="contact" type="text" placeholder="เช่น 08X-XXX-XXXX หรือ LINE ID"></label>
+      <label for="f-type">ประเภทงาน
+        <select id="f-type" name="type">
+          <option>คลิปสั้น TikTok / Reels</option>
+          <option>คลิป AI</option>
+          <option>โมชั่นกราฟิก / กราฟิก</option>
+          <option>ไลฟ์สตรีม / ไลฟ์อีเวนต์</option>
+          <option>วิดีโอโปรโมทองค์กร</option>
+          <option>ยังไม่แน่ใจ อยากปรึกษา</option>
+        </select>
+      </label>
+      <label for="f-msg">เล่าโจทย์คร่าวๆ<textarea id="f-msg" name="msg" placeholder="งานอะไร ใช้เมื่อไหร่ งบประมาณประมาณเท่าไหร่"></textarea></label>
+      <button class="btn btn-red" id="sendBtn" type="submit" style="align-self:flex-start">ส่งรายละเอียด</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+      <div class="fallback" id="fallback" hidden>
+        <pre id="fbText"></pre>
+        <div class="row"><button class="copy-btn" type="button" data-copy="fbText">คัดลอก</button><a class="copy-btn" id="fbMail" href="mailto:navapolthofan2473@gmail.com">เปิดแอปอีเมล</a></div>
+        <p class="fb-note">ส่งมาที่ LINE navapol.nax หรืออีเมล navapolthofan2473@gmail.com</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 NAVAPOL TAPANG · Creative Video &amp; Live Production</span>
+    <span class="mono" id="tc2">TC 00:00:00:00</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stage = document.getElementById('stage');
+
+  /* ---- RGB light behind the stage ---- */
+  var cv = document.getElementById('glow'), ctx = cv.getContext('2d');
+  var w = 1, h = 1, dpr = Math.min(window.devicePixelRatio || 1, 1.25);
+  function size(){ var r = cv.getBoundingClientRect(); w = cv.width = Math.max(1, Math.round(r.width*dpr)); h = cv.height = Math.max(1, Math.round(r.height*dpr)); }
+  var blobs = [
+    {c:'255,59,92',  x:.18, y:.45, r:.42, sx:.12, sy:.09, p:0},
+    {c:'70,198,245', x:.82, y:.40, r:.42, sx:.10, sy:.12, p:2},
+    {c:'148,102,255',x:.50, y:.20, r:.50, sx:.08, sy:.11, p:1},
+    {c:'51,240,192', x:.70, y:.85, r:.22, sx:.15, sy:.07, p:4}
+  ];
+  function draw(t){
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#07060f'; ctx.fillRect(0,0,w,h);
+    ctx.globalCompositeOperation = 'lighter';
+    var m = Math.max(w,h);
+    for (var i=0;i<blobs.length;i++){
+      var b = blobs[i];
+      var x = (b.x + Math.sin(t*b.sx + b.p)*.12)*w, y = (b.y + Math.cos(t*b.sy + b.p)*.15)*h, r = b.r*m;
+      var g = ctx.createRadialGradient(x,y,0,x,y,r);
+      g.addColorStop(0,'rgba('+b.c+',.38)'); g.addColorStop(1,'rgba('+b.c+',0)');
+      ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(7,6,15,.18)';
+    for (var yy=0; yy<h; yy+=4*dpr) ctx.fillRect(0, yy, w, 1*dpr);
+  }
+
+  /* ---- timecode at 25 fps ---- */
+  var tcEl = document.getElementById('tc'), tc2 = document.getElementById('tc2');
+  function pad(n){ return (n<10?'0':'') + n; }
+  function tc(ms){ var f = Math.floor(ms/40), fr = f%25, s = Math.floor(f/25); return pad(Math.floor(s/3600))+':'+pad(Math.floor(s/60)%60)+':'+pad(s%60)+':'+pad(fr); }
+
+  /* ---- parallax on the floating clips ---- */
+  var reels = Array.prototype.slice.call(document.querySelectorAll('.reel'));
+  var tx = 0, ty = 0, cx = 0, cy = 0;
+  stage.addEventListener('pointermove', function(e){
+    var r = stage.getBoundingClientRect();
+    tx = ((e.clientX - r.left)/r.width - .5)*2;
+    ty = ((e.clientY - r.top)/r.height - .5)*2;
+  });
+  stage.addEventListener('pointerleave', function(){ tx = 0; ty = 0; });
+
+  var start = performance.now(), visible = true;
+  function loop(now){
+    var el = now - start;
+    if (visible){
+      draw(el/1000 + 6);
+      cx += (tx - cx)*.06; cy += (ty - cy)*.06;
+      for (var i=0;i<reels.length;i++){
+        var d = parseFloat(reels[i].dataset.d) || .5;
+        reels[i].style.transform = 'translate3d(' + (-cx*d*34).toFixed(1) + 'px,' + (-cy*d*22).toFixed(1) + 'px,0) rotate(var(--r,0deg))';
+      }
+    }
+    var s = tc(el); tcEl.textContent = s; tc2.textContent = 'TC ' + s;
+    requestAnimationFrame(loop);
+  }
+  size();
+  window.addEventListener('resize', function(){ size(); if (reduce) draw(6); });
+  if (reduce){ draw(6); }
+  else {
+    if ('IntersectionObserver' in window){ new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }).observe(stage); }
+    requestAnimationFrame(loop);
+  }
+
+  /* ---- reels filter with counts ---- */
+  var chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('#reels .rc');
+  chips.forEach(function(c){
+    var f = c.dataset.f, n = f === 'all' ? cards.length : document.querySelectorAll('#reels .rc[data-cat="'+f+'"]').length;
+    var sp = document.createElement('span'); sp.textContent = n; c.appendChild(sp);
+  });
+  function applyFilter(f){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.f === f)); });
+    cards.forEach(function(k){ k.hidden = !(f === 'all' || k.dataset.cat === f); });
+    try { localStorage.setItem('nf-filter', f); } catch(e){}
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ applyFilter(c.dataset.f); }); });
+  try { var saved = localStorage.getItem('nf-filter'); if (saved && document.querySelector('.chip[data-f="'+saved+'"]')) applyFilter(saved); } catch(e){}
+
+  /* ---- copy buttons ---- */
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy), text = el.textContent;
+      function reset(){ setTimeout(function(){ btn.textContent = 'คัดลอก'; }, 1600); }
+      function done(){ btn.textContent = 'คัดลอกแล้ว'; reset(); }
+      function fallback(){ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'เลือกข้อความแล้ว'; reset(); }
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch(e){ fallback(); }
+    });
+  });
+
+  /* ---- brief form: emails via FormSubmit when hosted; falls back to copy / mail app ---- */
+  var MAIL = 'navapolthofan2473@gmail.com';
+  var form = document.getElementById('brief'), fmsg = document.getElementById('formMsg'), fb = document.getElementById('fallback'), sendBtn = document.getElementById('sendBtn');
+  function showFallback(text, type){
+    document.getElementById('fbText').textContent = text;
+    document.getElementById('fbMail').href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('สนใจจ้างงาน: ' + type) + '&body=' + encodeURIComponent(text);
+    fb.hidden = false;
+    fmsg.textContent = 'หน้านี้ส่งอัตโนมัติไม่ได้ คัดลอกข้อความด้านล่างแล้วส่งทาง LINE หรืออีเมลได้เลยครับ';
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nEl = document.getElementById('f-name'), cEl = document.getElementById('f-contact');
+    var name = nEl.value.trim(), contact = cEl.value.trim(), type = document.getElementById('f-type').value, body = document.getElementById('f-msg').value.trim();
+    if (!name){ fmsg.textContent = 'กรอกชื่อก่อนส่งนะครับ'; nEl.focus(); return; }
+    if (!contact){ fmsg.textContent = 'ใส่เบอร์โทร LINE หรืออีเมล เพื่อให้ผมติดต่อกลับได้ครับ'; cEl.focus(); return; }
+    var text = 'ชื่อ: ' + name + '\nติดต่อกลับ: ' + contact + '\nประเภทงาน: ' + type + '\nรายละเอียด: ' + (body || '-');
+    sendBtn.disabled = true; sendBtn.textContent = 'กำลังส่ง…'; fmsg.textContent = ''; fb.hidden = true;
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 12000);
+    var done = function(){ clearTimeout(timer); sendBtn.disabled = false; sendBtn.textContent = 'ส่งรายละเอียด'; };
+    try {
+      fetch('https://formsubmit.co/ajax/' + MAIL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({name: name, contact: contact, type: type, message: body || '-', _subject: 'ลูกค้าติดต่อจากเว็บ Portfolio: ' + type, _template: 'table', _captcha: 'false'}),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(r){
+        return r.json().then(function(j){ if (!r.ok || String(j.success) !== 'true') throw new Error('not sent'); });
+      }).then(function(){
+        done(); form.reset(); fmsg.textContent = 'ส่งแล้ว ขอบคุณครับ ผมจะติดต่อกลับโดยเร็ว';
+      }).catch(function(){ done(); showFallback(text, type); });
+    } catch(err){ done(); showFallback(text, type); }
+  });
+})();
+</script>
+</body>
+</html>
