@@ -841,11 +841,13 @@ footer .mono{font-family:var(--mono);letter-spacing:.08em;font-variant-numeric:t
   /* ---- brief form: emails via FormSubmit when hosted; falls back to copy / mail app ---- */
   var MAIL = 'navapolthofan2473@gmail.com';
   var form = document.getElementById('brief'), fmsg = document.getElementById('formMsg'), fb = document.getElementById('fallback'), sendBtn = document.getElementById('sendBtn');
-  function showFallback(text, type){
+  function showFallback(text, type, why){
     document.getElementById('fbText').textContent = text;
     document.getElementById('fbMail').href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('สนใจจ้างงาน: ' + type) + '&body=' + encodeURIComponent(text);
     fb.hidden = false;
-    fmsg.textContent = 'หน้านี้ส่งอัตโนมัติไม่ได้ คัดลอกข้อความด้านล่างแล้วส่งทาง LINE หรืออีเมลได้เลยครับ';
+    fmsg.textContent = why === 'activate'
+      ? 'ระบบส่งอีเมลยังไม่ได้เปิดใช้งาน (รอเจ้าของเว็บกด Activate ในอีเมลจาก FormSubmit) ระหว่างนี้คัดลอกข้อความด้านล่างแล้วส่งทาง LINE หรืออีเมลได้เลยครับ'
+      : 'ส่งอัตโนมัติไม่สำเร็จ คัดลอกข้อความด้านล่างแล้วส่งทาง LINE หรืออีเมลได้เลยครับ';
   }
   var sent = document.getElementById('sentModal'), sentOk = document.getElementById('sentOk'), lastFocus = null;
   function openSent(){ lastFocus = document.activeElement; sent.hidden = false; sentOk.focus(); }
@@ -871,10 +873,10 @@ footer .mono{font-family:var(--mono);letter-spacing:.08em;font-variant-numeric:t
         body: JSON.stringify(Object.assign(/@/.test(contact) ? {_replyto: contact} : {}, {name: name, contact: contact, type: type, message: body || '-', _subject: 'ลูกค้าติดต่อจากเว็บ Portfolio: ' + type, _template: 'table', _captcha: 'false'})),
         signal: ctrl ? ctrl.signal : undefined
       }).then(function(r){
-        return r.json().then(function(j){ if (!r.ok || String(j.success) !== 'true') throw new Error('not sent'); });
+        return r.json().then(function(j){ if (!r.ok || String(j.success) !== 'true') throw new Error(String(j.message || 'not sent')); });
       }).then(function(){
         done(); form.reset(); fmsg.textContent = ''; openSent();
-      }).catch(function(){ done(); showFallback(text, type); });
+      }).catch(function(err){ done(); showFallback(text, type, /activat/i.test(err && err.message) ? 'activate' : ''); });
     } catch(err){ done(); showFallback(text, type); }
   });
 })();
